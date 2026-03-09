@@ -17,7 +17,7 @@ warnings.filterwarnings('ignore')
 
 def metric(y_true, y_pred):
     accuracy = accuracy_score(y_true, y_pred)
-    macro_precision = precision_score(y_true, y_pred, average='macro')  # 每一类预测对的占比取平均
+    macro_precision = precision_score(y_true, y_pred, average='macro')
     macro_recall = recall_score(y_true, y_pred, average='macro')
     macro_f1 = f1_score(y_true, y_pred, average='macro')
     return {
@@ -98,7 +98,7 @@ class SelfMixTrainer:
 
         test_best = 0.0
         train_loader = self.train_data.run(mode="all", sampler=False)
-        eval_loader = self.eval_data.run(mode="all", sampler=False)  # 之前没有
+        eval_loader = self.eval_data.run(mode="all", sampler=False)
 
         if self.rank == 0:
             logging.info("Training begin...")
@@ -221,3 +221,4 @@ class SelfMixTrainer:
         path = self.training_args.model_save_path + suffix
         model_state_dict = torch.load(path)
         self.model.load_state_dict(model_state_dict)
+

@@ -1,12 +1,14 @@
 # GBmooer-on-NLP-label-noise
 This is source code from paper GBmooer, against to label noise in NLP yield.
 ## Project Structure
+```
 GBmooer/
 ├── bert-base-uncased/        # English pretrained model (BERT-Base-Uncased)
 ├── chinese-bert-wwm-ext/     # Chinese pretrained model
 ├── checkpoints/              # Saved model checkpoints
 ├── data/                     # Experimental datasets
 ├── logs/                     # Training logs and results
+```
 
 ## Data Preparation
 

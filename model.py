@@ -29,7 +29,7 @@ class Bert4Classify(nn.Module):
         input_ids = input_ids[:, :max_len]
         att_mask = att_mask[:, :max_len]
         all_hidden = self.encoder(input_ids, att_mask)
-        sentence_emb = all_hidden[0][:, 0]  # [CLS]对应的向量
+        sentence_emb = all_hidden[0][:, 0]
         if self.contrast:
             return self.learnable_sphere_projection(sentence_emb)
         else:
@@ -50,7 +50,6 @@ class Bert4Classify(nn.Module):
         checkpoint = torch.load(model_load_path)
         self.encoder.load_state_dict(checkpoint, strict=False)
 
-        # 加载 projection_matrix
         if self.projection_matrix is not None:
             projection_key = 'projection_matrix'
             if projection_key in checkpoint:
@@ -58,4 +57,5 @@ class Bert4Classify(nn.Module):
                     self.projection_matrix.copy_(checkpoint[projection_key])
             else:
                 print(f"Warning: '{projection_key}' not found in checkpoint.")
+
 

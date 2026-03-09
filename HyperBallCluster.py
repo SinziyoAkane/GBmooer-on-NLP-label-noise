@@ -218,19 +218,17 @@ def update_clusters_and_centers(centers, result):
     new_result = []
     new_centers = []
 
-    # 遍历每个簇
     for i, cluster in enumerate(result):
         if len(cluster) == 1:
             alone_point.append(cluster[0])
         else:
-            # 如果簇里面有多个数据点，保留该簇
             new_result.append(cluster)
-            new_centers.append(centers[i])  # 保留对应的中心
+            new_centers.append(centers[i]) 
 
     for point in alone_point:
         try:
-            cosine_similarities = np.dot(np.array(new_centers)[:, 1:], point[1:])  # 计算余弦相似度
-            distances = 1 - cosine_similarities  # 余弦距离：1 - 余弦相似度
+            cosine_similarities = np.dot(np.array(new_centers)[:, 1:], point[1:]) 
+            distances = 1 - cosine_similarities 
             index = np.argmin(distances)
             new_result[index] = np.vstack([new_result[index], point])
         except:
@@ -280,13 +278,6 @@ def main(data, label, min_synonyms):
             centers.append(np.insert(np.mean(hb_list_temp[i], axis=0), 0, i, axis=0))
             result.append(np.insert(hb_list_temp[i], 0, i, axis=1))
 
-        # centers, result = update_clusters_and_centers(centers, result)
-        # if min_synonyms == 1:
-        #     x = 0
-        #     for i in result:
-        #         if len(i) == 1:
-        #             x += 1
-        #     print(f"长度为1的球: {x}/{len(result)}")
 
         result_with_labels = []
         for cluster in result:
@@ -337,4 +328,5 @@ def compute_soft_label(nested_data, flat_data, label_num=2):
             raise ValueError(f"nested_data")
 
     return np.array(soft_labels)
+
 

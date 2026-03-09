@@ -19,7 +19,8 @@ When running the code, you should first create and ensure the existence of these
 
 Please ensure that all required libraries for running the code are installed. Then, simply run:
 ```bash
-bash run1.sh```
+bash run1.sh
+```
 
 ## Supported Datasets
 

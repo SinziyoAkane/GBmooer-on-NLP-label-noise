@@ -20,3 +20,12 @@ When running the code, you should first create and ensure the existence of these
 Please ensure that all required libraries for running the code are installed. Then, simply run:
 ```bash
 bash run1.sh
+
+## Supported Datasets
+
+The following datasets are supported in GBmooer:
+
+- **TREC** – Question classification dataset  
+- **AG News** – News topic classification dataset  
+- **IMDB** – Movie review sentiment classification dataset  
+- **Chnsenticorp** – Chinese sentiment analysis dataset

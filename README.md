@@ -26,7 +26,7 @@ bash run1.sh
 
 The following datasets are supported in GBmooer:
 
-- **TREC** – Question classification dataset([Download](https://cogcomp.seas.upenn.edu/Data/QA/QC/))
-- **AG News** – News topic classification dataset
-- **IMDB** – Movie review sentiment classification dataset  
-- **Chnsenticorp** – Chinese sentiment analysis dataset
+- **TREC** – Question classification dataset ([Download](https://cogcomp.seas.upenn.edu/Data/QA/QC/))
+- **AG News** – News topic classification dataset ([Download](https://s3.amazonaws.com/fast-ai-nlp/ag_news_csv.tgz))
+- **IMDB** – Movie review sentiment classification dataset ([Download](https://ai.stanford.edu/~amaas/data/sentiment/))
+- **Chnsenticorp** – Chinese sentiment analysis dataset ([Download](https://github.com/ymcui/Chinese-BERT-wwm/tree/master/data/chnsenticorp))
